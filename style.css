@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} 
+
+:root {
+    font-size: 62.5%;
+    --bg-color: white;
+    --font-color: #29292E;
+    --controls-color: #323238;
+    --button-color: #E1E1E6;
+    --pressbutton-color: #02799D;
+    --button-hover: #29292e4a;
+    --svg-color: #323238;
+}
+
+.dark {
+    --bg-color: #000;
+    --font-color: #fff;
+    --button-color: #29292E;
+    --controls-color: #C4C4CC;
+    --pressbutton-color: #0A3442;
+    --button-hover: #29292e82;
+    --svg-color: #C4C4CC;
+}
+
+body {
+    background-color: var(--bg-color);
+    font-size: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    color: var(--font-color);
+    position: relative;
+}
+
+.hide {
+    display: none;
+}
+
+.switch-mode {
+    position: absolute;
+    right: 64px;
+    top: -80px;
+    cursor: pointer;
+}
+
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 19.2rem;
+    margin-top: 15rem;
+}
+
+#timer-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+
+#timer span {
+    font-size: 12.6rem;
+    line-height: 14.8rem;
+
+    text-align: center;
+}
+
+#controls {
+    display: flex;
+    justify-content: space-between;
+}
+
+#controls button {
+    background-color: transparent;
+    border: none;
+    width: 4.8rem;
+    height: 4.8rem;
+    cursor: pointer;
+    transition: transform .3s;
+}
+
+#controls button:hover {
+    transform: scale(1.1);
+}
+
+#controls button svg path {
+    fill: var(--controls-color);
+}
+
+#controls button img {
+    width: 48px;
+    height: 48px;
+}
+
+#cards {
+    display: grid;
+    gap: 3.2rem;
+    grid-template-areas: 
+    'A B'
+    'C D';
+}
+
+.tree {
+    grid-area: A;
+}
+
+.cloud {
+    grid-area: B;
+}
+
+.coffee {
+    grid-area: C;
+}
+
+.fire {
+    grid-area: D;
+}
+
+#cards button {
+    background: var(--button-color);
+    border-radius: 24px;
+    border: none;
+    padding: 4.7rem;
+    transition: .3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+}
+
+#cards button:hover {
+    background-color: var(--button-hover);
+    cursor: pointer;
+}
+
+#cards  button.active {
+    background-color: var(--pressbutton-color);
+}
+
+#cards button svg path {
+    fill: var(--svg-color)
+}
+
+#cards button.active svg path {
+    fill: #fff;
+}
+
+
+
+.card-sounds input[type="range"] {
+    width: 100%;
+    max-width: 9rem;
+    height: 0.5rem;
+    appearance: none;
+    display: block;
+    background-color: var(--gray-color);
+    border-radius: 1rem;
+  }
+  
+  .card-sounds input[type="range"]::-webkit-slider-thumb {
+    display: block;
+    appearance: none;
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+    background-color: var(--gray-color);
+  }
+  
+  .card-sounds .tree.active input[type="range"],
+  .card-sounds .tree.active input[type="range"]::-webkit-slider-thumb,
+  .card-sounds .rain.active input[type="range"],
+  .card-sounds .rain.active input[type="range"]::-webkit-slider-thumb,
+  .card-sounds .home.active input[type="range"],
+  .card-sounds .home.active input[type="range"]::-webkit-slider-thumb,
+  .card-sounds .fire.active input[type="range"],
+  .card-sounds .fire.active input[type="range"]::-webkit-slider-thumb {
+    background-color: var(--white);
+  }
+
+
+
+@media (max-width: 950px) {
+    .container {
+        justify-content: center;
+        gap: 5rem;
+        margin-top: 18rem;
+    }
+
+    #timer span {
+        font-size: 10rem;
+        line-height: 10rem;
+    }
+
+    #cards button {
+        width: 10rem;
+        height: 10rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+    }
+}
